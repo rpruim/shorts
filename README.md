@@ -16,5 +16,5 @@ If you're using version control, you will want to check in this directory.
 
 Avalable extensions include
 
-* `{{ vfill }}` -- add vertical space
+* `{{< vfill >}}` -- add vertical space
 
