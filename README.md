@@ -4,7 +4,6 @@ Some handy short codes for quarto documents
 
 ## Installing
 
-_TODO_: Replace the `<github-organization>` with your GitHub organization.
 
 ```bash
 quarto add rpruim/shorts
@@ -17,5 +16,5 @@ If you're using version control, you will want to check in this directory.
 
 Avalable extensions include
 
-* `{{{ vfill }}} -- add vertical space
+* `{{{ vfill }}}` -- add vertical space
 
