@@ -1,10 +1,5 @@
-return {
-  ['vfill'] = function(args, kwargs, meta) 
-    local raw = {
-    html = '<br/><br/><br/>',
-    latex = '\\vfill{}',
-    typst = '#v(1fr)',
-  }
+local function raw2pandoc(args, kwargs)
+  local raw = args[1]
 
   if quarto.doc.isFormat('pdf') then
     return pandoc.RawBlock('tex', raw.latex)
@@ -16,25 +11,35 @@ return {
     -- fall back 
     return pandoc.Para{pandoc.Str ''}
     end
+end
+
+return {
+  ['vfill'] = function(args, kwargs, meta)
+    local raw = {
+      html = '<br/><br/><br/>',
+      latex = '\\vfill{}',
+      typst = '#v(1fr)',
+    }
+
+    return raw2pandoc(raw)
   end,
 
-  ['br'] = function(args, kwargs, meta) 
+  ['medskip'] = function(args, kwargs, meta)
     local raw = {
-    html = '<br/><br/>',
-    latex = '\\bigksip{}',
-    typst = '#v(1em)',
-  }
+      html = '<br/><br/>',
+      latex = '\\medksip{}',
+      typst = '#v(1em)',
+    }
+    return raw2pandoc(raw)
+  end,
 
-  if quarto.doc.isFormat('pdf') then
-    return pandoc.RawBlock('tex', raw.latex)
-  elseif quarto.doc.isFormat('html') then
-    return pandoc.RawBlock('html', raw.html)
-  elseif quarto.doc.isFormat('typst') then
-    return pandoc.RawBlock('typst', raw.typst)
-  else
-    -- fall back 
-    return pandoc.Para{pandoc.Str ''}
+  ['bigskip'] = function(args, kwargs, meta)
+    local raw = {
+      html = '<br/><br/><br/>',
+      latex = '\\bigskip{}',
+      typst = '#v(2em)',
+    }
+    return raw2pandoc(raw)
   end
 
-end
 }
