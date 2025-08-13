@@ -1,5 +1,4 @@
-local function raw2pandoc(args, kwargs)
-  local raw = args[1]
+local function raw2pandoc(raw)
 
   if quarto.doc.isFormat('pdf') then
     return pandoc.RawBlock('tex', raw.latex)
@@ -20,7 +19,6 @@ return {
       latex = '\\vfill{}',
       typst = '#v(1fr)',
     }
-
     return raw2pandoc(raw)
   end,
 
@@ -41,5 +39,4 @@ return {
     }
     return raw2pandoc(raw)
   end
-
 }
