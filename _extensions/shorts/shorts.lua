@@ -15,6 +15,7 @@ return {
   else
     -- fall back 
     return pandoc.Para{pandoc.Str ''}
+    end
   end,
 
   ['br'] = function(args, kwargs, meta) 
