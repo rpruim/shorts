@@ -2,7 +2,10 @@
 
 # Shorts Extension For Quarto
 
-Some handy short codes for quarto documents
+<img src="shorts-hex.png" style="width:25.0%" />
+
+Some handy short codes for quarto documents. Currently pdf (i.e.,
+LaTeX), typst, and html formats are supported.
 
 ## Installing
 

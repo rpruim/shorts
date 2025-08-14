@@ -5,7 +5,10 @@ format: gfm
 
 # Shorts Extension For Quarto
 
-Some handy short codes for quarto documents
+![](shorts-hex.png){width=25%}
+
+Some handy short codes for quarto documents.
+Currently pdf (i.e., LaTeX), typst, and html formats are supported.
 
 ## Installing
 
