@@ -1,8 +1,9 @@
 ---
-title: Shorts Extension For Quarto
-format: markdown
+format: gfm
 ---
 
+
+# Shorts Extension For Quarto
 
 Some handy short codes for quarto documents
 
