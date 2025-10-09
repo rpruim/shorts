@@ -38,5 +38,33 @@ return {
       typst = '#v(2em)',
     }
     return raw2pandoc(raw)
+  end,
+
+
+  ['nmedskip'] = function(args, kwargs, meta)
+    local raw = {
+      html = '',
+      latex = '\\vspace{-1em}',
+      typst = '#v(-1em)',
+    }
+    return raw2pandoc(raw)
+  end,
+
+  ['vspace'] = function(args, kwargs, meta)
+    local raw = {
+      html = '',
+      latex = '\\vspace{args[0]}',
+      typst = '#v(args[0])',
+    }
+    return raw2pandoc(raw)
+  end,
+
+  ['nbigskip'] = function(args, kwargs, meta)
+    local raw = {
+      html = '',
+      latex = '\\vspace{-2em}',
+      typst = '#v(-2em)',
+    }
+    return raw2pandoc(raw)
   end
 }
