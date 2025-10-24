@@ -53,8 +53,8 @@ return {
   ['vspace'] = function(args, kwargs, meta)
     local raw = {
       html = '',
-      latex = '\\vspace{args[0]}',
-      typst = '#v(args[0])',
+      latex = '\\vspace{' .. args[1] .. '}',
+      typst = '#v(' .. args[1] .. ')',
     }
     return raw2pandoc(raw)
   end,
